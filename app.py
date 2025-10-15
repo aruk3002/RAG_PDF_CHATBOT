@@ -13,23 +13,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.markdown("""
-<div style="
-    background: rgba(56,189,248,0.1);
-    border: 1px solid rgba(56,189,248,0.3);
-    padding: 0.8rem 1rem;
-    border-radius: 0.7rem;
-    text-align:center;
-    color:#93c5fd;
-    font-weight:500;
-    margin-bottom:1rem;
-">
-✨ Ask questions from your PDFs — AI will answer only from your documents.
-</div>
-""", unsafe_allow_html=True)
-# -------------------------------
-# Minimal CSS for clean look (no container)
-# -------------------------------
 # -------------------------------
 # Modern UI Styling
 # -------------------------------
@@ -207,6 +190,23 @@ if st.sidebar.button("➕ New Chat", use_container_width=True):
 # Main Title
 # -------------------------------
 st.title("🤖 Smart PDF Chatbot")
+
+
+st.markdown("""
+<div style="
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.3);
+    padding: 0.8rem 1rem;
+    border-radius: 0.7rem;
+    text-align:center;
+    color:#93c5fd;
+    font-weight:500;
+    margin-bottom:1rem;
+">
+✨ Ask questions from your PDFs — AI will answer only from your documents.
+</div>
+""", unsafe_allow_html=True)
+
 st.caption("Upload your knowledge base PDFs and ask questions intelligently.")
 
 # -------------------------------
