@@ -89,7 +89,7 @@ You can ask questions directly from your uploaded files, get concise and relevan
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/smart-pdf-chatbot.git
+git clone https://github.com/aruk3002/RAG_PDF_CHATBOT.git
 cd smart-pdf-chatbot
 ```
 
@@ -178,17 +178,6 @@ Then open your browser at `http://localhost:8501/`
 
 No retraining or reconfiguration required.
 
----
-
-## 🎨 UI Customization
-
-The chatbot includes a custom CSS theme for a **modern ChatGPT-style** experience:
-
-* Gradient title bar
-* Rounded chat bubbles
-* Frosted glass sidebar
-* Animated hover effects
-  You can tweak colors in the `<style>` section inside `app.py`.
 
 ---
 
