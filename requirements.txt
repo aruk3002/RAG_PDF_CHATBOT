@@ -12,4 +12,6 @@ sentence_transformers
 chromadb
 torch
 transformers
-
+langchain-core
+langchain-text-splitters
+langchain-community
