@@ -18,46 +18,50 @@ st.set_page_config(
 # -------------------------------
 st.markdown("""
 <style>
-/* Global App Styling */
+/* ===== Global Base Styling ===== */
 body {
-    background-color: #000000; /* solid black background */
-    color: #e2e8f0;
     font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Streamlit Main Container */
+/* ===== Default (Light Mode) ===== */
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* ===== Main Container ===== */
 .main {
-    background-color: #000000; /* black background for main content */
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
     padding: 1rem 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Title */
+/* ===== Title ===== */
 h1 {
     text-align: center;
-    color: #38bdf8;
+    color: #2563eb;
     font-size: 2.2rem !important;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(56,189,248,0.3);
+    text-shadow: 0 0 6px rgba(37,99,235,0.15);
 }
 
-/* Sidebar */
+/* ===== Sidebar ===== */
 [data-testid="stSidebar"] {
-    background-color: #000000; /* solid black sidebar */
-    border-right: 1px solid #1f2937;
+    background: #f1f5f9;
+    border-right: 1px solid rgba(148,163,184,0.3);
 }
-
 .sidebar-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #93c5fd;
+    color: #1e40af;
     margin-bottom: 1rem;
 }
- 
-/* Buttons */
+
+/* ===== Buttons ===== */
 button[kind="primary"] {
-    background: linear-gradient(90deg, #38bdf8, #3b82f6);
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
     color: white;
     border: none;
     border-radius: 0.6rem;
@@ -65,64 +69,108 @@ button[kind="primary"] {
     transition: all 0.3s ease-in-out;
 }
 button[kind="primary"]:hover {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
     transform: scale(1.02);
 }
 
-/* File uploader box */
+/* ===== File Uploader ===== */
 [data-testid="stFileUploader"] {
-    background-color: #111827; /* slightly lighter than black for contrast */
-    border: 1px dashed #38bdf8;
+    background: #f8fafc;
+    border: 1px dashed #3b82f6;
     border-radius: 1rem;
     padding: 1rem;
-    color: #cbd5e1;
+    color: #1e293b;
 }
 
-/* Chat bubbles */
+/* ===== Chat Messages ===== */
 .stChatMessage {
     padding: 1rem;
     border-radius: 1rem;
     margin: 0.5rem 0;
     line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .stChatMessage[data-testid="stChatMessage-user"] {
-    background: linear-gradient(145deg, #1e3a8a, #3b82f6);
-    color: white;
+    background: linear-gradient(145deg, #dbeafe, #93c5fd);
+    color: #1e3a8a;
     text-align: right;
     border-top-right-radius: 0;
 }
 
 .stChatMessage[data-testid="stChatMessage-assistant"] {
-    background-color: #111827; /* dark gray for assistant bubble */
-    color: #e2e8f0;
+    background: #e2e8f0;
+    color: #1e293b;
     border-top-left-radius: 0;
 }
 
-/* Chat input box */
+/* ===== Chat Input ===== */
 [data-testid="stChatInputContainer"] {
-    background-color: #000000; /* black input container */
-    border-top: 1px solid #1f2937;
+    background: #f1f5f9;
+    border-top: 1px solid rgba(148,163,184,0.3);
     padding-top: 0.5rem;
 }
-
 textarea {
-    background-color: #111827; /* dark gray for contrast */
-    color: #e2e8f0 !important;
-    border: 1px solid #334155;
+    background-color: #ffffff;
+    color: #1e293b !important;
+    border: 1px solid rgba(148,163,184,0.4);
     border-radius: 0.7rem;
 }
 
-/* Info boxes */
+/* ===== Info Boxes ===== */
 .stInfo, .stWarning, .stError {
     border-radius: 0.8rem !important;
-    background-color: #111827 !important;
-    color: #e2e8f0 !important;
+    background-color: #f8fafc !important;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
     visibility: hidden;
+}
+
+/* ====== Dark Mode ====== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+    }
+    .main {
+        background: linear-gradient(145deg, #0f172a, #1e293b);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+        color: #38bdf8;
+        text-shadow: 0 0 10px rgba(56,189,248,0.3);
+    }
+    [data-testid="stSidebar"] {
+        background: #1e293b;
+        border-right: 1px solid rgba(148,163,184,0.15);
+    }
+    .sidebar-title {
+        color: #93c5fd;
+    }
+    [data-testid="stFileUploader"] {
+        background: rgba(30, 41, 59, 0.9);
+        border: 1px dashed #38bdf8;
+        color: #e2e8f0;
+    }
+    .stChatMessage[data-testid="stChatMessage-user"] {
+        background: linear-gradient(145deg, #1e3a8a, #3b82f6);
+        color: #ffffff;
+    }
+    .stChatMessage[data-testid="stChatMessage-assistant"] {
+        background: rgba(30, 41, 59, 0.9);
+        color: #e2e8f0;
+    }
+    [data-testid="stChatInputContainer"] {
+        background: rgba(15, 23, 42, 0.95);
+        border-top: 1px solid rgba(148,163,184,0.2);
+    }
+    textarea {
+        background-color: rgba(30, 41, 59, 0.85);
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(148,163,184,0.3);
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -283,5 +331,3 @@ if uploaded_files:
             st.stop()
 else:
     st.info("📘 Upload your PDFs to start chatting. Your session will be saved automatically.")
-
-
