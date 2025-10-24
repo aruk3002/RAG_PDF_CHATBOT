@@ -20,17 +20,17 @@ st.markdown("""
 <style>
 /* Global App Styling */
 body {
-    background-color: #0f172a; /* deep navy background */
+    background-color: #000000; /* solid black background */
     color: #e2e8f0;
     font-family: 'Inter', sans-serif;
 }
 
 /* Streamlit Main Container */
 .main {
-    background: linear-gradient(145deg, #0f172a, #1e293b);
+    background-color: #000000; /* black background for main content */
     padding: 1rem 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
 
 /* Title */
@@ -44,8 +44,8 @@ h1 {
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: #1e293b; /* solid dark background */
-    border-right: 1px solid #334155;
+    background-color: #000000; /* solid black sidebar */
+    border-right: 1px solid #1f2937;
 }
 
 .sidebar-title {
@@ -71,7 +71,7 @@ button[kind="primary"]:hover {
 
 /* File uploader box */
 [data-testid="stFileUploader"] {
-    background: #1e293b; /* solid background */
+    background-color: #111827; /* slightly lighter than black for contrast */
     border: 1px dashed #38bdf8;
     border-radius: 1rem;
     padding: 1rem;
@@ -94,20 +94,20 @@ button[kind="primary"]:hover {
 }
 
 .stChatMessage[data-testid="stChatMessage-assistant"] {
-    background: #1e293b; /* solid background */
+    background-color: #111827; /* dark gray for assistant bubble */
     color: #e2e8f0;
     border-top-left-radius: 0;
 }
 
 /* Chat input box */
 [data-testid="stChatInputContainer"] {
-    background: #0f172a; /* solid dark background */
-    border-top: 1px solid #334155;
+    background-color: #000000; /* black input container */
+    border-top: 1px solid #1f2937;
     padding-top: 0.5rem;
 }
 
 textarea {
-    background-color: #1e293b; /* solid background */
+    background-color: #111827; /* dark gray for contrast */
     color: #e2e8f0 !important;
     border: 1px solid #334155;
     border-radius: 0.7rem;
@@ -116,7 +116,7 @@ textarea {
 /* Info boxes */
 .stInfo, .stWarning, .stError {
     border-radius: 0.8rem !important;
-    background-color: #1e293b !important;
+    background-color: #111827 !important;
     color: #e2e8f0 !important;
 }
 
@@ -283,4 +283,5 @@ if uploaded_files:
             st.stop()
 else:
     st.info("📘 Upload your PDFs to start chatting. Your session will be saved automatically.")
+
 
