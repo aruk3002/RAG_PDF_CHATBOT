@@ -44,9 +44,8 @@ h1 {
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(148,163,184,0.15);
+    background: #1e293b; /* solid dark background */
+    border-right: 1px solid #334155;
 }
 
 .sidebar-title {
@@ -56,7 +55,6 @@ h1 {
     margin-bottom: 1rem;
 }
  
-            
 /* Buttons */
 button[kind="primary"] {
     background: linear-gradient(90deg, #38bdf8, #3b82f6);
@@ -73,7 +71,7 @@ button[kind="primary"]:hover {
 
 /* File uploader box */
 [data-testid="stFileUploader"] {
-    background: rgba(30, 41, 59, 0.8);
+    background: #1e293b; /* solid background */
     border: 1px dashed #38bdf8;
     border-radius: 1rem;
     padding: 1rem;
@@ -96,27 +94,30 @@ button[kind="primary"]:hover {
 }
 
 .stChatMessage[data-testid="stChatMessage-assistant"] {
-    background: rgba(30, 41, 59, 0.9);
+    background: #1e293b; /* solid background */
     color: #e2e8f0;
     border-top-left-radius: 0;
 }
 
 /* Chat input box */
 [data-testid="stChatInputContainer"] {
-    background: rgba(15, 23, 42, 0.95);
-    border-top: 1px solid rgba(148,163,184,0.2);
+    background: #0f172a; /* solid dark background */
+    border-top: 1px solid #334155;
     padding-top: 0.5rem;
 }
+
 textarea {
-    background-color: rgba(30, 41, 59, 0.8);
+    background-color: #1e293b; /* solid background */
     color: #e2e8f0 !important;
-    border: 1px solid rgba(148,163,184,0.3);
+    border: 1px solid #334155;
     border-radius: 0.7rem;
 }
 
 /* Info boxes */
 .stInfo, .stWarning, .stError {
     border-radius: 0.8rem !important;
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
 }
 
 /* Footer */
@@ -282,3 +283,4 @@ if uploaded_files:
             st.stop()
 else:
     st.info("📘 Upload your PDFs to start chatting. Your session will be saved automatically.")
+
